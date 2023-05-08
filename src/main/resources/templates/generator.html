@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generátor náhodných čísel</title>
+</head>
+<body>
+    <h1>Generátor náhodných čísel</h1>
+    <form method="post" action="/generator">
+        <label>Zadejte číslo od:
+        <input type="number" id="number1" name="number1" th:field="${generatorDTO.number1}"/>
+        </label><br/>
+
+        <label>Zadejte číslo do:
+        <input type="number" id="number2" name="number2" th:field="${generatorDTO.number2}"/>
+        </label><br/>
+
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>
