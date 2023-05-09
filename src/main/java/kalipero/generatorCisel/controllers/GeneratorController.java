@@ -5,10 +5,7 @@ import kalipero.generatorCisel.models.GeneratorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller                  // vykresluje HTML na straně serveru
 @RequestMapping("generator") // vrací odkaz na šablonu generator.html
@@ -26,5 +23,9 @@ public class GeneratorController {
         model.addAttribute("result", result);
         return "result";          /* hondoty zadane uživatelem se uloži do parametru generatorDTO typu GeneratorDTO
                                      parametr model typu Model slouží k předán výsledku pohledu*/
+    }
+    @ExceptionHandler(IllegalArgumentException.class)
+    public String handleIllegalArgumentException(){
+        return "invalid-form";
     }
 }

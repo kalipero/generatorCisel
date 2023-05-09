@@ -10,6 +10,12 @@ public class GeneratorService {
     public int generate(GeneratorDTO generator){
         Random rand = new Random();
         int randomCislo = rand.nextInt(generator.getNumber2() - generator.getNumber1() + 1) + generator.getNumber1();
+        /*
+         int randomCislo = rand.nextInt(
+
+
+
+         */
         return randomCislo;
     }
 }
